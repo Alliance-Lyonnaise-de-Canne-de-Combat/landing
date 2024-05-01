@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte des clubs de Canne de Combat</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            display: flex;
+            flex-direction: column; /* Default to column layout for mobile */
+            height: 100%;
+        }
+        #sidebar {
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 0 -2px 5px 0 rgba(0,0,0,0.1);
+            order: 2; /* Sidebar appears below the map on mobile */
+        }
+        #map {
+            flex-grow: 1;
+            overflow: hidden;
+            order: 1; /* Map appears above the sidebar on mobile */
+        }
+        iframe {
+            width: 100%;
+            height: 100%; /* Adjust height to fill the parent container */
+            border: none;
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 600px) {
+            #container {
+                flex-direction: row; /* Row layout for larger screens */
+            }
+            #sidebar {
+                width: 350px;
+                box-shadow: 2px 0 5px 0 rgba(0,0,0,0.1);
+                order: 1; /* Sidebar goes back to the left */
+            }
+            #map {
+                order: 2; /* Map follows the sidebar */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="map">
+            <iframe frameborder="0" allowfullscreen allow="geolocation" src="//umap.openstreetmap.fr/fr/map/clubs-de-canne-de-combat_1063408?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"></iframe>
+        </div>
+        <div id="sidebar">
+            <h2>Carte des Clubs de Canne de Combat</h2>
+            <p>Envie de pratiquer ? Trouvez un club à l'aide de notre Carte !</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=8O1HxpYd8VE">Vidéo de présentation de la Canne de Combat</a></li>
+                <li><a href="https://www.youtube.com/watch?v=IFqh4IKSA64">Vidéo Vintage de Compétition de Canne de Combat dans un ring de boxe française ! </a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
